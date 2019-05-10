@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>తోటరామన్నవూరు వేంకటేశ్వరస్వామి దేవస్థానము</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" id="Table1">
+      <tr>
+        <td align="center" valign="top">
+          <!-- Header Starts -->
+          <header>
+            <!--
+              <a onclick="alert('hello thanks for visiting our site...')">
+            -->
+            <table
+              width="100%"
+              border="0"
+              cellspacing="0"
+              cellpadding="0"
+              id="Table2"
+            >
+              <tr>
+                <td class="Head-tab">
+                  <table
+                    width="100%"
+                    border="0"
+                    cellspacing="0"
+                    cellpadding="0"
+                    align="center"
+                    id="Table4"
+                  >
+                    <tr>
+                      <td
+                        align="center"
+                        valign="top"
+                        style="background-image: url(../assets/NewImages/gopuram-Mini-Icon.png); background-position: bottom; background-repeat: repeat-x;"
+                      >
+                        <table
+                          width="1002"
+                          border="0"
+                          cellspacing="0"
+                          cellpadding="0"
+                          align="center"
+                          class="head-tbl"
+                          id="Table5"
+                        >
+                          <tr>
+                            <td width="150">
+                              <img
+                                src="../assets/NewImages/Nagalamma123.png"
+                                alt="TVD Logo"
+                              />
+                            </td>
+                            <td width="612" align="center">
+                              <img
+                                src="../assets/NewImages/HD-TXT3.png"
+                                width="526"
+                                height="93"
+                              />
+                            </td>
+                            <td
+                              width="240"
+                              align="right"
+                              style="vertical-align: top;"
+                            >
+                              <img
+                                src="../assets/NewImages/TTD-Head-Img.png"
+                                height="131"
+                              />
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="main-menu-btm"></td>
+              </tr>
+            </table>
+
+            <!-- </a> -->
+          </header>
+          <!-- Header Ends -->
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <ul class="nav navbar-nav">
+                <li>
+                  <a routerLinkActive="active" routerLink="gallery">Gallery</a>
+                </li>
+                <li>
+                  <a routerLinkActive="active" routerLink="sevas">Seva</a>
+                </li>
+                <li>
+                  <a routerLinkActive="active" routerLink="donors">Donors</a>
+                </li>
+                <li>
+                  <a routerLinkActive="active" routerLink="newdonation"
+                    >new Donation</a
+                  >
+                </li>
+              </ul>
+              <ul class="nav navbar-nav pull-right">
+                <li>
+                  <a routerLinkActive="active" routerLink="login">Sign In</a>
+                  <!-- <input type="button" (click)="onLogout()" value="Logout" /> -->
+                </li>
+              </ul>
+            </nav>
+            <router-outlet> </router-outlet>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Footer -->
+
+    <footer class="footer footer-bg">
+      <div class="container">
+        <span style="float:left;"
+          >© 2018 Copyright:
+          <a href="http://cryantech.com/"> CryanTech.com</a></span
+        >
+
+        <span style="float:right;">
+          <!--
+      <a href="https://twitter.com/KanakarajuNaidu" id="home">Twitter</a>
+      <a
+        href="https://www.blogger.com/blogger.g?blogID=5260392799829518383#allposts"
+        id="blog"
+        style="padding-left:20px"
+        >Blog</a
+      >
+    -->
+
+          <audio
+            preload="auto"
+            id="id12"
+            controls="controls"
+            autoplay="true"
+            style="background-color: transparent; opacity: 0.9; width: 50px; background-position: left;"
+            loop="loop"
+            onclick="stopAudio();"
+            src="../assets/music/slogan.mp3"
+          ></audio>
+        </span>
+      </div>
+    </footer>
+
+    <script type="text/javascript">
+      function stopAudio() {
+        var audioId = document.getElementById('id12');
+        audioId.pause();
+        audioId.currentTime = 0;
+      }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+.Head-tab-top-menu {
+  background-image: url(../assets/NewImages/Head-Bg-top-menu.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 34px;
+  /* vertical-align: top; */
+  display: block;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  margin-top: 0px;
+}
+.Head-tab {
+  background-image: url(../assets/NewImages/Head-Bg.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  height: 80px;
+  vertical-align: top;
+}
+
+.head-top-bg {
+  background-image: url(../assets/NewImages/Head-Bg-top-menu.jpg);
+  height: 24px;
+  text-align: center;
+  background-position: top;
+  display: block;
+  position: fixed;
+  width: 100%;
+  padding-top: 10px;
+  z-index: 1000;
+}
+
+/* Footer Starts */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  /* color: white; */
+  /* text-align: center; */
+}
+
+.footer-bg {
+  background-image: url(../assets/NewImages/foot-bg.jpg);
+  text-align: center;
+  height: 50px;
+  width: 100%;
+}
+.footer-row {
+  border-top: 1px #f7cbaa solid;
+  padding-bottom: 7px;
+  padding-top: 7px;
+}
+a {
+  color: #1e7ec8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+/* Footer Ends */
