@@ -10,6 +10,6 @@ export class NewDonorComponent implements OnInit {
   constructor(private service: DonationService) {}
 
   ngOnInit() {
-        this.service.getEmployees();
+        // this.service.getEmployees();
   }
 }

@@ -6,13 +6,13 @@ export const environment = {
   production: false,
   apiBaseUrl: 'http://localhost:3000/api',
   config: {
-    apiKey: "AIzaSyAnuy2cFlO7d4cOJCXhAfEZuznH3jnGfGc",
-    authDomain: "tvd-access-1547474848421.firebaseapp.com",
-    databaseURL: "https://tvd-access-1547474848421.firebaseio.com",
-    projectId: "tvd-access-1547474848421",
-    storageBucket: "tvd-access-1547474848421.appspot.com",
-    messagingSenderId: "1016238692563",
-    appId: "1:1016238692563:web:c50204c3e98bb6e1"
+    apiKey: "AIzaSyCzy7YXs1OOGPpz9dSvxnDoILju1gIpGpo",
+    authDomain: "tvdauth.firebaseapp.com",
+    databaseURL: "https://tvdauth.firebaseio.com",
+    projectId: "tvdauth",
+    storageBucket: "tvdauth.appspot.com",
+    messagingSenderId: "611481470485",
+    appId: "1:611481470485:web:d8bd04c416ca0dce"
   }
 };
 

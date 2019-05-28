@@ -29,10 +29,13 @@ import { RouterModule } from '@angular/router';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserService } from './shared/user.service';
 import { DonationService } from './shared/donation.service';
+import { CoreModule } from './core/core.module';
 
 // other
 import { NewDonorComponent } from './thota/donors/new-donor.component';
 import { environment } from 'src/environments/environment';
+import { HeaderComponent } from './components/header.component';
+import { FooterComponent } from './components/footer.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,9 @@ import { environment } from 'src/environments/environment';
     SignUpComponent,
     SignInComponent,
     UserProfileComponent,
-    NewDonorComponent
+    NewDonorComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +60,7 @@ import { environment } from 'src/environments/environment';
     AngularFireAuthModule,
     ReactiveFormsModule,
     FormsModule,
+    CoreModule,
     AppRoutingModule,
     HttpClientModule,
     MaterialModule,

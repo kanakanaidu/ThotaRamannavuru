@@ -9,17 +9,18 @@ import { MemberesGalleryComponent } from './thota/memberes-gallery.component';
 import { ListDonorsComponent } from './thota/donors/list-donors.component';
 import { ListSevasComponent } from './thota/list-sevas.component';
 import { NewDonorComponent } from './thota/donors/new-donor.component';
+import { AuthGuard } from './auth/auth.guard';
 
 // The last route is the empty path route. This specifies
 // the route to redirect to if the client side path is empty.
 const appRoutes: Routes = [
-  { path: 'list', component: ListMemberesComponent },
-  { path: 'create', component: CreateMemberComponent },
+  { path: 'list', component: ListMemberesComponent, canActivate: [AuthGuard] },
+  { path: 'create', component: CreateMemberComponent, canActivate: [AuthGuard] },
   { path: 'gallery', component: MemberesGalleryComponent },
   { path: 'sevas', component: ListSevasComponent },
-  { path: 'donors', component: ListDonorsComponent },
+  { path: 'donors', component: ListDonorsComponent, canActivate: [AuthGuard]},
   { path: 'newdonation', component: NewDonorComponent },
-  { path: '', redirectTo: '/donors', pathMatch: 'full' }
+  { path: '', redirectTo: '/userprofile', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../shared/user.service';
-import { Router } from '@angular/router';
+import { AuthService } from '../core/auth.service';
+import { auth } from 'firebase';
 
 @Component({
   selector: 'app-user-profile',
@@ -8,22 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-  userDetails;
-  constructor(private userService: UserService, private router: Router) {}
 
-  ngOnInit() {
-    this.userService.getUserProfile().subscribe(
-      res => {
-        this.userDetails = res['user'];
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
+  constructor(public auth: AuthService) {}
 
-  onLogout() {
-    this.userService.deleteToken();
-    this.router.navigate(['/login']);
-  }
+  ngOnInit() { }
+
 }

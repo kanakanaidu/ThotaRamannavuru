@@ -1,30 +1,82 @@
-<table *ngIf="userDetails" class="table-fill">
-  <thead>
-    <tr>
-      <th colspan="2" class="text-center">User Profile</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>First Name</td>
-      <td>{{ userDetails.fullName.split(' ')[0] }}</td>
-    </tr>
-    <tr>
-      <td>Last Name</td>
-      <td>{{ userDetails.fullName.split(' ')[1] }}</td>
-    </tr>
-    <tr>
-      <td>Email</td>
-      <td>{{ userDetails.email }}</td>
-    </tr>
-    <tr>
-      <td>Phone</td>
-      <td>{{ userDetails.phone }}</td>
-    </tr>
-    <tr>
-      <td colspan="2" class="text-center">
-        <input type="button" (click)="onLogout()" value="Logout" />
-      </td>
-    </tr>
-  </tbody>
-</table>
+<!-- <h1>base</h1>
+<div *ngIf="auth.user$ | async as user; else login">
+  {{user | json }}
+<hr>
+<button class="button" (click)="auth.signOut()">Sign Out</button>
+</div>
+<ng-template #login>
+  <button (click)="auth.googleSignin()">Login with Google</button>
+</ng-template> -->
+<div *ngIf="auth.user$ | async; then authenticated else guest">
+  <!-- template will replace this div -->
+</div>
+<!-- User NOT logged in -->
+<ng-template #guest>
+  <div class="container login-form" style="margin-left: 146px; margin-right: 146px; width: 970px !important">
+    <form action="/action_page.php">
+      <div class="row">
+        <div class="col">
+          <a href="#" class="fb btn">
+            <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+          </a>
+          <a href="#" class="twitter btn">
+            <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+          </a>
+          <a (click)="auth.googleSignin()" class="google btn"><i class="fa fa-google fa-fw">
+            </i> Login with Google+
+          </a>
+          <div class="or-seperator"><i>or</i></div>
+        </div>
+
+        <div class="col form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+            <input class="form-control" type="text" name="username" placeholder="Username" required>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+            <input class="form-control" type="password" name="password" placeholder="Password" required>
+          </div>
+          <input type="submit" value="Login">
+          <div class="row">
+            <div class="col1">
+              <a href="#" style="color: orange" class="btn">Sign up</a>
+            </div>
+            <div class="col1">
+              <a href="#" style="color:orange" class="btn">Forgot password?</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+
+</ng-template>
+<!-- User logged in -->
+<ng-template #authenticated>
+  <div *ngIf="auth.user$ | async as user" class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-3 col-md-6">
+        <div class="well well-sm">
+          <div class="row">
+            <div class="col-sm-6 col-md-4 rounded">
+              <img [src]="user.photoURL" alt="" class="img-rounded img-responsive" />
+            </div>
+            <div class="col-sm-6 col-md-8">
+              <h2>{{ user.displayName }}</h2>
+              <!-- <small><cite title="San Francisco, USA">San Francisco, USA <i class="glyphicon glyphicon-map-marker">
+                              </i></cite>
+                              </small> -->
+              <span class="glyphicon glyphicon-envelope"></span><a href="mailto:{{ user.email }}">{{ user.email }}</a>
+              <br />
+              <span class="glyphicon glyphicon-globe"></span><a href="http://www.CryanTech.com">www.CryanTech.com</a>
+              <br />
+              <span class="glyphicon glyphicon-gift"></span>{{ user.DOB }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

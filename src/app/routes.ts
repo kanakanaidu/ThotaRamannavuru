@@ -10,10 +10,14 @@ export const appRoutes: Routes = [
     component: UserComponent,
     children: [{ path: '', component: SignUpComponent }]
   },
+  // {
+  //   path: 'login',
+  //   component: UserComponent,
+  //   children: [{ path: '', component: SignInComponent }]
+  // },
   {
     path: 'login',
-    component: UserComponent,
-    children: [{ path: '', component: SignInComponent }]
+    component: UserProfileComponent
   },
   {
     path: 'userprofile',
