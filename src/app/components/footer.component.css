@@ -1,0 +1,30 @@
+/* Footer Starts */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* color: white; */
+    text-align: center;
+  }
+  
+  .footer-bg {
+    background-image: url(../../assets/NewImages/foot-bg.jpg);
+    text-align: center;
+    height: 45px;
+    width: 100%;
+  }
+  .footer-row {
+    border-top: 0px #f7cbaa solid;
+    padding-bottom: 7px;
+    padding-top: 7px;
+  }
+  a {
+    color: azure;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  /* Footer Ends */

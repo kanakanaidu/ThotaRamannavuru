@@ -1,0 +1,56 @@
+<mat-toolbar class="task-orange">
+  <span class="fill-remaining-space"></span>
+  <span>Donation Details</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1">
+    <mat-icon>clear</mat-icon>
+  </button>
+</mat-toolbar>
+<form [formGroup]="service.form" class="normal-form">
+  <mat-grid-list cols="2">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <input type="hidden" formControlName="$key">
+        <input type="hidden" formControlName="id">
+        <mat-form-field appearance="outline" style="width: 250px;">
+          <mat-label>Donor Name</mat-label>
+          <input formControlName="donorName" matInput readonly alt="Donor Name">
+        </mat-form-field>
+        <mat-card class="donation-card">
+          <!-- <img mat-card-image class="img-rounded img-responsive" src="https://lh4.googleusercontent.com/-GuhbrIyV3rY/AAAAAAAAAAI/AAAAAAAAJxM/0iJrXFJWYJM/photo.jpg" alt="Photo of Donor"> -->
+          <img mat-card-image class="img-rounded img-responsive" [src]="service.form.value.photoURL"
+            alt="Photo of Donor">
+        </mat-card>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Donation Details</mat-label>
+          <input formControlName="donationDetails" matInput readonly>
+        </mat-form-field>
+
+        <mat-form-field class="donation-month" appearance="outline">
+          <mat-label>Donation Month & Year</mat-label>
+          <input formControlName="monthYear" matInput readonly>
+          <input type="hidden" formControlName="donationYear">
+          <input type="hidden" formControlName="donationMonth">
+        </mat-form-field>
+        <mat-form-field class="donation-amount" appearance="outline">
+          <mat-label>Donated Amount</mat-label>
+          <input formControlName="donationAmount" matInput readonly>
+          <span matPrefix>₹&nbsp;</span>
+          <!-- <span matSuffix>/-</span> -->
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Mobile</mat-label>
+          <input formControlName="mobileNo" readonly matInput>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>

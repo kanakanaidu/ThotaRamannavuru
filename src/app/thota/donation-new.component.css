@@ -1,0 +1,21 @@
+.add-bottom-padding {
+  padding-bottom: 10px;
+  font-size: large;
+}
+
+.mat-radio-button~.mat-radio-button {
+  margin-left: 16px;
+}
+
+.example-month-picker .mat-calendar-period-button {
+  pointer-events: none;
+}
+
+.example-month-picker .mat-calendar-arrow {
+  display: none;
+}
+
+.primary-tooltip {
+  background-color: coral !important;
+  font-size: 20px;
+}

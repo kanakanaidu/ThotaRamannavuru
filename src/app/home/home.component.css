@@ -1,0 +1,15 @@
+.panelorange {
+  color: white;
+  font-weight: bold;
+  background-color: #F58D03;
+}
+
+.panelbody {
+  color: white;
+  font-weight: bold;
+  background-color: rgb(255, 165, 0);
+}
+
+div.a {
+  text-indent: 50px;
+}

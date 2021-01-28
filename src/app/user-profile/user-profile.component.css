@@ -1,0 +1,339 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+
+.userpic {
+  border: 1px dashed #b8b8b8;
+  width: 202px;
+  height: 202px;
+  position: relative;
+  cursor: pointer;
+}
+
+.userpic-wrapper {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+a {
+  font-size: 16px;
+}
+/* i {
+    display: contents;
+    position: absolute;
+    font-size: 17px;
+    background: default;
+    cursor: pointer;
+    color: primary;
+    top: -11px;
+    right: -11px;
+    height: 26px;
+    border-radius: 50%; 
+  }
+  i:before {
+    line-height: 26px;
+  }
+  i:hover {
+    color: danger;
+  } */
+a.change-userpic {
+  display: none;
+  width: 202px;
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 200ms ease-in-out;
+  color: default-text;
+  text-decoration: none;
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+  line-height: 32px;
+  text-align: center;
+}
+
+.profile-page.form-group.label {
+  line-height: 34px;
+  font-size: 14px;
+  font-weight: font-light;
+}
+
+.profile-page.form-group.input {
+  font-weight: font-light;
+}
+
+
+/* login form related CSS start */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* style the container */
+.container {
+  text-align: center;
+  position: relative;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  /* padding: 20px 0 30px 0; */
+  margin-left: 146px;
+  margin-right: 146px;
+  width: 970px !important;
+}
+
+.or-seperator {
+  margin: 20px 0 10px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
+
+.or-seperator i {
+  display: inline;
+  font-size: 14px;
+  padding: 0 10px;
+  background: #f7f7f7;
+  position: relative;
+  top: -11px;
+  z-index: 1;
+}
+
+/* style inputs and link buttons */
+input,
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none;
+  /* remove underline from anchors */
+}
+
+input:hover,
+.btn:hover {
+  opacity: 1;
+}
+
+/* add appropriate colors to fb, twitter and google buttons */
+.fb {
+  background-color: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background-color: #55ACEE;
+  color: white;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: white;
+}
+
+.fa-fw {
+  display: contents;
+  font-size: 17px;
+}
+
+.fa-user {
+  display: contents;
+  position: inherit;
+  font-size: 17px;
+}
+
+.fa-lock {
+  display: contents;
+  position: inherit;
+  font-size: 17px;
+}
+
+/* style the submit button */
+input[type=submit] {
+  background-color: #da631f;
+  color: white;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #e02c14;
+}
+
+/* Two-column layout */
+.col {
+  float: left;
+  width: 50%;
+  margin: auto;
+  padding: 0 50px;
+  margin-top: 6px;
+}
+
+.col1 {
+  float: left;
+  width: 40%;
+  margin: auto;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* vertical line */
+.vl {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  border: 2px solid #ddd;
+  height: 175px;
+}
+
+/* text inside the vertical line */
+.vl-innertext {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 8px 10px;
+}
+
+/* hide some text on medium and large screens */
+.hide-md-lg {
+  display: none;
+}
+
+/* bottom container */
+.bottom-container {
+  text-align: center;
+  background-color: #666;
+  border-radius: 0px 0px 4px 4px;
+}
+
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+  .col {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  /* hide the vertical line */
+  .vl {
+    display: none;
+  }
+
+  /* show the hidden text on small screens */
+  .hide-md-lg {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* login form related CSS end */
+
+/* userprofile related css start */
+body {
+  padding-top: 30px;
+}
+
+.glyphicon {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+small {
+  display: block;
+  line-height: 1.428571429;
+  color: #999;
+}
+
+.cropimg {
+
+  position: absolute;
+
+  clip: rect(0px, 50px, 100px, 50px);
+
+}
+
+/* userprofile related css start */
+
+
+/* 19/06/2019 */
+.login-form {
+  width: 385px;
+  margin: 30px auto;
+}
+
+.login-form form {
+  margin-bottom: 15px;
+  background: #f7f7f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+
+.login-form h2 {
+  margin: 0 0 15px;
+}
+
+.form-control,
+.login-btn {
+  min-height: 38px;
+  border-radius: 2px;
+}
+
+.input-group-addon .fa {
+  font-size: 18px;
+}
+
+.login-btn {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.social-btn .btn {
+  border: none;
+  margin: 10px 3px 0;
+  opacity: 1;
+}
+
+.social-btn .btn:hover {
+  opacity: 0.9;
+}
+
+.social-btn .btn-primary {
+  background: #507cc0;
+}
+
+.social-btn .btn-info {
+  background: #64ccf1;
+}
+
+.social-btn .btn-danger {
+  background: #df4930;
+}
+
+.or-seperator {
+  margin-top: 20px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
+
+.or-seperator i {
+  padding: 0 10px;
+  background: #f7f7f7;
+  position: relative;
+  top: -11px;
+  z-index: 1;
+}

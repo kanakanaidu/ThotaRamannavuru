@@ -1,0 +1,69 @@
+<div class="container">
+  <mat-toolbar>
+    <span class="fill-remaining-space"></span>
+    <span>TVD Donors List</span>
+    <span class="fill-remaining-space"></span>
+  </mat-toolbar>
+</div>
+<form [formGroup]="service.form" class="normal-form">
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <input type="hidden" formControlName="$key">
+        <input type="hidden" formControlName="id">
+        <mat-form-field>
+          <input formControlName="donorName" matInput placeholder="Donor Name*">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="donationDetails" matInput placeholder="Donation Details*">
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="email" matInput placeholder="Email*">
+        </mat-form-field>
+
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        <mat-form-field>
+          <input formControlName="date" matInput [matDatepicker]="dp" placeholder="Donation Date">
+          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+          <mat-datepicker #dp></mat-datepicker>
+        </mat-form-field>
+        <!-- <mat-form-field appearance="fill">
+          <mat-label>Donation Month and Year</mat-label>
+          <input formControlName="date" matInput [matDatepicker]="dp" [formControl]="date" [value]="date.value">
+          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+          <mat-datepicker #dp startView="year" (yearSelected)="chosenYearHandler($event)"
+            (monthSelected)="chosenMonthHandler($event, dp)" panelClass="example-month-picker">
+          </mat-datepicker>
+        </mat-form-field> -->
+        <mat-form-field>
+          <input formControlName="donationAmount" matInput placeholder="Donation Amount*">
+        </mat-form-field>
+        <div>
+          <label id="donation-radio-group-label">Donation Status</label>
+          <mat-radio-group formControlName="donationStatus" disabled #tooltip="matTooltip"
+            matTooltip="Admin will change payment status once donation recieved..." matTooltipClass="primary-tooltip">
+            <mat-radio-button value="1">Pending</mat-radio-button>
+            <mat-radio-button value="2">Paid</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+
+
+        <div class="button-row">
+          <button mat-raised-button color="primary" (click)="onSubmit()" type="submit"
+            [disabled]="service.form.invalid">Submit</button>
+          <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>

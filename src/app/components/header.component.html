@@ -1,0 +1,91 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="Table1">
+  <tr>
+    <td align="center" valign="top">
+      <!-- Header Starts -->
+      <!-- <a onclick="alert('hello thanks for visiting our site...')"> -->
+      <table width="1002" border="0" cellspacing="0" cellpadding="0" id="Table2">
+        <tr>
+          <td class="Head-tab">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" id="Table4">
+              <tr>
+                <td align="center" valign="top"
+                  style="background-image: url(../assets/NewImages/gopuram-Mini-Icon.png); background-position: bottom; background-repeat: repeat-x;">
+                  <table width="1002" border="0" cellspacing="0" cellpadding="0" align="center" class="head-tbl"
+                    id="Table5">
+                    <tr>
+                      <td width="150">
+                        <img src="../assets/NewImages/Nagalamma123.png" alt="TVD Logo" />
+                      </td>
+                      <td width="612" align="center">
+                        <img src="../assets/NewImages/HD-TXT3.png" width="526" height="93" />
+                      </td>
+                      <td width="240" align="right" style="vertical-align: top;">
+                        <img src="../assets/NewImages/TTD-Head-Img.png" height="131" />
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" routerLinkActive="active" routerLink="home">Home</a>
+                </div>
+                <ul class="nav navbar-nav">
+                  <li>
+                    <a routerLinkActive="active" routerLink="gallery" onclick="alert('Gallery feature will be coming soon...')">Gallery</a>
+                  </li>
+                  <li>
+                    <a routerLinkActive="active" routerLink="sevas" onclick="alert('Seva feature will be coming soon...')">Seva</a>
+                  </li>
+                  <li>
+                    <a routerLinkActive="active" routerLink="donations">Donations</a>
+                  </li>
+                  <!-- <li>
+                      <a routerLinkActive="active" routerLink="newdonation/0">Donate</a>
+                  </li> -->
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="dropdown">
+                    <div *ngIf="auth.user$ | async; then authenticated else guest">
+                      <!-- template will replace this div -->
+                    </div>
+                    <ng-template #guest>
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span
+                          class="glyphicon glyphicon-user"></span> Login<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a routerLinkActive="active" routerLink="signup"><span
+                              class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a routerLinkActive="active" routerLink="login"><span
+                              class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                      </ul>
+                    </ng-template>
+                    <ng-template #authenticated>
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span
+                          class="glyphicon glyphicon-user"></span> My Profile<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a routerLinkActive="active" routerLink="userprofile"><span
+                              class="glyphicon glyphicon-user"></span> Settings</a></li>
+                        <li><a (click)="auth.signOut()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                      </ul>
+                    </ng-template>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </td>
+        </tr>
+      </table>
+      <!-- </a> -->
+      <!-- Header Ends -->
+    </td>
+  </tr>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>

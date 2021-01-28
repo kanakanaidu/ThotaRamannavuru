@@ -1,0 +1,69 @@
+<div *ngIf="auth.user$ | async; then authenticated else guest">
+  <!-- template will replace this div -->
+</div>
+<!-- User NOT logged in -->
+<ng-template #guest>
+  <div class="login-form">
+    <form action="/examples/actions/confirmation.php" method="post">
+      <!-- <h2 class="text-center">Sign in</h2>
+
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon glyphicon glyphicon-user"></span>
+
+          <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary login-btn btn-block">Sign in</button>
+      </div>
+      <div class="clearfix">
+        <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
+        <a href="#" class="pull-right">Forgot Password?</a>
+      </div>
+      <div class="or-seperator"><i>or</i></div> -->
+      <p class="text-center">Login with your social media account</p>
+      <div class="text-center social-btn">
+        <!-- <a onclick="alert('Facebook authentication will be available soon! Sorry for the inconvinience...')" class="btn btn-primary"><i class="fa fa-facebook"></i>&nbsp; Facebook</a> -->
+        <a (click)="auth.googleSignin()" class="btn btn-danger"><i class="fa fa-google"></i>&nbsp; Google</a>
+        <!-- <a onclick="alert('Twitter authentication will be available soon! Sorry for the inconvinience...')" class="btn btn-info"><i class="fa fa-twitter"></i>&nbsp; Twitter</a> -->
+      </div>
+    </form>
+    <!-- <p class="text-center text-muted small">Don't have an account? <a href="#">Sign up here!</a></p> -->
+  </div>
+</ng-template>
+<!-- User logged in -->
+<ng-template #authenticated>
+  <div *ngIf="auth.user$ | async as user" class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-3 col-md-6">
+        <div class="well well-sm">
+          <div class="row">
+            <div class="col-sm-6 col-md-4 rounded">
+              <img [src]="user.photoURL" alt="" class="img-rounded img-responsive" />
+            </div>
+            <div class="col-sm-6 col-md-8">
+              <h2>{{ user.displayName }}</h2>
+              <!-- <small><cite title="San Francisco, USA">San Francisco, USA <i class="glyphicon glyphicon-map-marker">
+                                </i></cite>
+                                </small> -->
+              <br />
+              <span class="glyphicon glyphicon-envelope"> </span><a href="mailto:{{ user.email }}">{{ user.email }}</a>
+              <br />
+              <!-- <span class="glyphicon glyphicon-globe"></span><a href="http://www.CryanTech.com">www.CryanTech.com</a> -->
+              <!-- <br /> -->
+              <span class="glyphicon glyphicon-gift"></span><span
+                class="glyphicon glyphicon-calendar"></span>{{ user.DOB }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

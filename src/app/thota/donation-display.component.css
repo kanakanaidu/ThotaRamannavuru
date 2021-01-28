@@ -1,0 +1,38 @@
+.donation-card {
+  max-width: 200px;
+  align-content: center;
+  margin-left: 50px;
+}
+
+.task-orange {
+  height: auto !important;
+  color: white;
+  font-weight: bold;
+  background-color: #F58D03;
+}
+
+.donation-month {
+  width: 49%;
+}
+
+.donation-amount {
+  padding-left: 20px;
+  width: 49%;
+}
+
+.mat-toolbar-single-row {
+  height: 30px;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.normal-form {
+  max-height: 90%;
+}
+
+.btn-dialog-close {
+  border:  #F58D03;
+}

@@ -1,0 +1,33 @@
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css';
+
+.Head-tab-top-menu {
+    background-image: url(../../assets/NewImages/Head-Bg-top-menu.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 34px;
+    /* vertical-align: top; */
+    display: block;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    margin-top: 0px;
+  }
+  .Head-tab {
+    background-image: url(../../assets/NewImages/Head-Bg.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 80px;
+    vertical-align: top;
+  }
+  
+  .head-top-bg {
+    background-image: url(../../assets/NewImages/Head-Bg-top-menu.jpg);
+    height: 24px;
+    text-align: center;
+    background-position: top;
+    display: block;
+    position: fixed;
+    width: 100%;
+    padding-top: 10px;
+    z-index: 1000;
+  }

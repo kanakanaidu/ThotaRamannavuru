@@ -1,0 +1,101 @@
+<mat-toolbar>
+  <span>{{service.form.controls['$key'].value?"Modify Donation":"New Donation"}}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1">
+    <mat-icon>clear</mat-icon>
+  </button>
+</mat-toolbar>
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <input type="hidden" formControlName="$key">
+        <input type="hidden" formControlName="id">
+        <mat-form-field>
+          <input formControlName="donorName" matInput required placeholder="Donor Name">
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="donationDetails" matInput required placeholder="Donation Details">
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="email" matInput required placeholder="Email">
+          <mat-error>Invalid email address.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="mobileNo" required matInput placeholder="Mobile*">
+          <mat-error *ngIf="service.form.controls['mobileNo'].errors?.required">This field is mandatory.</mat-error>
+          <mat-error *ngIf="service.form.controls['mobileNo'].errors?.minlength">Minimum 10 charactors needed.
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controles-container">
+        <mat-form-field style="width: 50%;">
+          <mat-label>Donation Month</mat-label>
+          <mat-select formControlName="donationMonth" required (selectionChange)="checkMonthYear()">
+            <mat-option>Select Month</mat-option>
+            <mat-option value="Jan">January</mat-option>
+            <mat-option value="Feb">February</mat-option>
+            <mat-option value="Mar">March</mat-option>
+            <mat-option value="Apr">April</mat-option>
+            <mat-option value="May">May</mat-option>
+            <mat-option value="Jun">Jun</mat-option>
+            <mat-option value="Jul">July</mat-option>
+            <mat-option value="Aug">August</mat-option>
+            <mat-option value="Sep">September</mat-option>
+            <mat-option value="Oct">October</mat-option>
+            <mat-option value="Nov">November</mat-option>
+            <mat-option value="Dec">December</mat-option>
+          </mat-select>
+
+        </mat-form-field>
+        <mat-form-field style="width: 50%;">
+          <mat-label>Year</mat-label>
+          <mat-select formControlName="donationYear" (selectionChange)="checkMonthYear()">
+            <mat-option>Year</mat-option>
+            <mat-option value="2021">2021</mat-option>
+            <mat-option value="2022">2022</mat-option>
+            <mat-option value="2023">2023</mat-option>
+            <mat-option value="2024">2024</mat-option>
+            <mat-option value="2018">2025</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div
+          *ngIf="service.form.controls['donationMonth'].invalid && (service.form.controls['donationMonth'].dirty || service.form.controls['donationMonth'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="service.form.controls['donationMonth'].errors.required">
+            Month is required.
+          </div>
+        </div>
+        <div
+          *ngIf="service.form.controls['donationYear'].invalid && (service.form.controls['donationYear'].dirty || service.form.controls['donationYear'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="service.form.controls['donationYear'].errors.required">
+            Year is required.
+          </div>
+        </div>
+        <!-- <mat-error *ngIf="service.form.controls['donationMonth'].errors && (service.form.controls['donationMonth'].dirty || service.form.controls['donationMonth'].touched) || service.form.controls['donationYear'].errors">{{getErrorMessage()}}</mat-error> -->
+        <input type="hidden" formControlName="monthYear">
+        <mat-form-field>
+          <input formControlName="donationAmount" matInput placeholder="Donation Amount">
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+        <div>
+          <label id="donation-radio-group-label">Donation Status</label>
+          <mat-radio-group formControlName="donationStatus" disabled #tooltip="matTooltip" matTooltipPosition="left"
+            matTooltip="Admin will change payment status once donation recieved..." matTooltipClass="primary-tooltip">
+            <mat-radio-button value="1">Pending</mat-radio-button>
+            <mat-radio-button value="2">Paid</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="button-row">
+          <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+          <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>
